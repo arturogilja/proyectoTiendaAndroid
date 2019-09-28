@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent" 
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             tools:context=".Ticket">
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75"
+            android:id="@+id/guide"
+    />
+
+    <ListView 
+            android:layout_width="match_parent" 
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            app:layout_constraintBottom_toTopOf="@id/guide"
+            android:id="@+id/listViewTicket"
+            android:layout_marginBottom="10dp"
+    >
+
+    </ListView>
+    <include layout="@layout/ticket_element"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/header"
+             app:layout_constraintTop_toTopOf="parent"
+             android:layout_marginTop="10dp"
+             android:layout_marginBottom="5dp"
+             app:layout_constraintBottom_toTopOf="@id/listViewTicket"
+    />
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ticketSubtotal"
+            android:layout_marginRight="15dp"
+            app:layout_constraintTop_toBottomOf="@id/guide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ticketIva"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ticketIva"
+            android:layout_marginRight="15dp"
+            app:layout_constraintTop_toBottomOf="@id/ticketSubtotal"
+            app:layout_constraintEnd_toEndOf="parent
+"
+    />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ticketTotal"
+            android:layout_marginRight="15dp"
+            app:layout_constraintTop_toBottomOf="@id/ticketIva"
+            app:layout_constraintEnd_toEndOf="parent"
+    />
+
+
+
+
+    <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Subtotal: "
+            android:id="@+id/carritoSubtotalTag"
+            app:layout_constraintTop_toBottomOf="@id/guide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/carritoIvaTag"
+    />
+
+    <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="IVA: "
+            android:id="@+id/carritoIvaTag"
+            app:layout_constraintTop_toBottomOf="@id/carritoSubtotalTag"
+            app:layout_constraintEnd_toEndOf="parent
+"
+    />
+
+    <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Total: "
+            android:id="@+id/carritoTotalTag"
+            app:layout_constraintTop_toBottomOf="@id/carritoIvaTag"
+            app:layout_constraintEnd_toEndOf="parent"
+    />
+
+    <Button
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/ticketTotal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Volver a Tienda"
+            android:id="@+id/volverATienda"
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>
